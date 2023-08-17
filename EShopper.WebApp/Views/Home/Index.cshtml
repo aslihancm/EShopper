@@ -1,0 +1,19 @@
+﻿@model ProductListModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-3">
+    @await Component.InvokeAsync("CategoryList")
+</div>
+<div class="col-9">
+    <partial name="_slider" />
+    <div class="row mt-3">
+        @foreach (var item in Model.Products)
+        {
+            <partial name="_product" for="@item" />
+        }       
+    </div>
+
+</div>
+
